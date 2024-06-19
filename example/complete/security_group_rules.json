@@ -1,0 +1,21 @@
+{
+    "ingress": {
+      "ingress_eks_2049": {
+        "description": "Allow internal to access EFS",
+        "from_port": 2049,
+        "to_port": 2049,
+        "protocol": "tcp",
+        "cidr_blocks": ["10.0.0.0/8"]
+      }
+    },
+    "egress": {
+      "egress_http": {
+        "description": "Allow outbound HTTP traffic",
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_blocks": ["0.0.0.0/0"]
+      }
+    }
+  }
+  
