@@ -4,7 +4,6 @@ provider "aws" {
 
 locals {
   security_group_rules = jsondecode(file("${path.module}/security_group_rules.json"))
-  rules                = jsondecode(data.aws_s3_object.sg_rules.body)
   additional_ingress_rules = {
     ingress_22 = {
       description = "Allow SSH traffic"
@@ -34,21 +33,6 @@ module "security_group" {
   rules_file_path            = "${path.module}/security_group_rules.json"
 }
 
-# Example usage when not creating a security group, but using an existing one
-module "security_group_existing" {
-  source                     = "../../"
-  create_security_group      = false
-  existing_security_group_id = "sg-12345678"
-  load_from_s3               = true
-  s3_bucket                  = "ttfi-security-group-rules"
-  s3_key                     = "rules/dev/rules.json"
-}
-
 output "security_group_rules" {
   value = module.security_group.security_group_rules
-}
-
-
-output "security_group_existing_rules" {
-  value = module.security_group_existing.security_group_rules
 }
