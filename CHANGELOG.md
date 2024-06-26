@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.2](https://github.com/axetrading/terraform-aws-security-group/compare/v1.0.1...v1.0.2) (2024-06-26)
+
+
+### Bug Fixes
+
+* test ([d1c8084](https://github.com/axetrading/terraform-aws-security-group/commit/d1c80847bd69b971e9aa2fa1fdd4ee7058245f0c))
+
 ### [1.0.1](https://github.com/axetrading/terraform-aws-security-group/compare/v1.0.0...v1.0.1) (2024-06-26)
 
 
