@@ -34,7 +34,27 @@ variable "existing_security_group_id" {
   default     = null
 }
 
-variable "rules_file_path" {
-  description = "The path to the JSON file containing the security group rules"
-  type        = string
+variable "load_from_s3" {
+  description = "Flag to determine if the security group rules should be loaded from S3"
+  type        = bool
+  default     = false
 }
+
+variable "s3_bucket" {
+  description = "The S3 bucket containing the security group rules JSON"
+  type        = string
+  default     = ""
+}
+
+variable "s3_key" {
+  description = "The S3 key (path) of the security group rules JSON"
+  type        = string
+  default     = ""
+}
+
+variable "rules_file_path" {
+  description = "The local file path for the security group rules JSON"
+  type        = string
+  default     = ""
+}
+
